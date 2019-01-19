@@ -11,8 +11,10 @@ namespace AIForGames
 		class BoidRenderer : public IRenderer
 		{
 		public:
-			BoidRenderer(float i_x, float i_y, float i_z) : IRenderer(i_x, i_y, i_z) {}
+			BoidRenderer() : IRenderer() {}
+			BoidRenderer(float i_x, float i_y, float i_z) : IRenderer(i_x, i_y, i_z) {}			
 			BoidRenderer(ofVec3f i_pos) : IRenderer(i_pos) {}
+			BoidRenderer(ofVec3f i_pos, float i_orientation) : IRenderer(i_pos, i_orientation) {}
 			void Draw();
 		};
 	}
