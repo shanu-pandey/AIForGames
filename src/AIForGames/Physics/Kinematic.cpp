@@ -1,4 +1,6 @@
 #include "Kinematic.h"
+#include "ofTimer.h"
+#include "../../ofApp.h"
 
 namespace AIForGames
 {
@@ -119,5 +121,67 @@ namespace AIForGames
 
 	}
 
+	float Physics::Kinematic::CalculateNewOrientation(float i_orientation, ofVec2f i_velocity)
+	{
+		if (std::sqrt((i_velocity.x * i_velocity.x) + (i_velocity.y * i_velocity.y)) > 0)
+			return std::atan2(i_velocity.y, i_velocity.x);
 
+		return i_orientation;
+
+	}
+
+	void  Physics::Kinematic::Update(KinematicSteeringOutput i_steering)
+	{
+		m_position.x += m_velocity.x * ofGetLastFrameTime() ;
+		m_position.y += m_velocity.y * ofGetLastFrameTime();
+		m_orientation += i_steering.rotation * ofGetLastFrameTime();
+		m_velocity = i_steering.velocity;
+
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 #pragma once
 #include "ofVec2f.h"
+#include "../Movement/Movement.h"
 
 namespace AIForGames
 {
@@ -26,6 +27,8 @@ namespace AIForGames
 			void SetVelocity(ofVec2f i_velocity);
 			float GetRotation();
 			void SetRotation(float i_rotation);
+			float CalculateNewOrientation(float i_orientation, ofVec2f i_velocity);
+			void Update(KinematicSteeringOutput i_steering);
 
 		private:
 			ofVec2f m_position;
