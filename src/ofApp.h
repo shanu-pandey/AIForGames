@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "AIForGames/GameObject/GameObject.h"
-
+#include "ofxGui.h"
 class ofApp : public ofBaseApp
 {
 	public:
@@ -21,6 +21,15 @@ class ofApp : public ofBaseApp
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		ofxPanel gui;
+		ofParameter<float> rotateX;
+		ofParameter<float> rotateY;
+		ofParameter<float> rotateZ;
+
+		float rotationX;
+		float rotationY;
+		float rotationZ;
 
 	private:
 		AIForGames::GameObject* m_pBoidObject;
