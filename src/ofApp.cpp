@@ -26,21 +26,24 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+	ofSetRectMode(OF_RECTMODE_CENTER);
 	gui.draw();
 	//ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
 	ofRotateX(rotationX);
 	ofRotateY(rotationY);
-	ofRotateZ(rotationZ);
+	
 	//ofCircle(-300, 0, 130);
 	//ofTriangle(150, 200, 200, 250, 200, 150);
 	//m_pBoidObject->DrawObject();
 
 	
 	ofPushMatrix();
-	//ofTranslate(600, 400);
+	ofTranslate(300, 300);
+	ofRotateZ(rotationZ);
 	//ofRotateZ(ofGetElapsedTimef() * 30);
-	//ofRect(0, 0, 200, 200);
-	ofTriangle(0, 0, 100, 100, 100, 0);
+	//ofRect(0, 0, 20, 20);
+	ofTriangle(0, -70, -30, 30, 30, 30);
 	ofPopMatrix();
 }
 
