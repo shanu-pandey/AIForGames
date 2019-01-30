@@ -9,7 +9,7 @@ void ofApp::setup()
 	ofVec2f position = ofVec3f(radius, radius);
 	m_pBoidObject = new AIForGames::GameObject(radius, position, orientation);	
 	m_pTarget = new AIForGames::GameObject(-100, -120);
-	m_pMovementAlgo = new AIForGames::Movement::KinematicArrive(m_pBoidObject->GetKinematic(), m_pTarget->GetKinematic(), 300, 5, 5);
+	m_pMovementAlgo = new AIForGames::Movement::Arrive(m_pBoidObject->GetKinematic(), m_pTarget->GetKinematic(), 1200, 10, 3);
 	//m_pBoidObject->SetTarget(m_pTarget);
 }
 

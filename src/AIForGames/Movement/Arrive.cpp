@@ -1,5 +1,5 @@
 #pragma once
-#include "KinematicArrive.h"
+#include "Arrive.h"
 #include "../Physics/Kinematic.h"
 
 
@@ -7,11 +7,9 @@ namespace AIForGames
 {
 	namespace Movement
 	{
-		KinematicArrive::KinematicArrive(Physics::Kinematic* i_character, Physics::Kinematic* i_target, float i_maxSpeed, float i_radius, float i_timeToTarget)
+		Arrive::Arrive(Physics::Kinematic* i_character, Physics::Kinematic* i_target, float i_maxSpeed, float i_radius, float i_timeToTarget)
 		{
-			m_pInputs = new MovementInputs();
-			/*m_pInputs->source = new Physics::Kinematic();
-			m_pInputs->destination = new Physics::Kinematic();*/
+			m_pInputs = new MovementInputs();			
 			m_pInputs->source = i_character;
 			m_pInputs->destination = i_target;
 			m_pInputs->maxSpeed = i_maxSpeed;
@@ -19,13 +17,13 @@ namespace AIForGames
 			m_pInputs->timeToTarget = i_timeToTarget;
 		}
 
-		KinematicArrive::KinematicArrive(MovementInputs* i_pInput)
+		Arrive::Arrive(MovementInputs* i_pInput)
 		{
 			m_pInputs = new MovementInputs();
 			m_pInputs = i_pInput;
 		}
 
-		float KinematicArrive::CalculateNewOrientation(float i_orientation, ofVec2f i_velocity)
+		float Arrive::CalculateNewOrientation(float i_orientation, ofVec2f i_velocity)
 		{
 			if (std::sqrt((i_velocity.x * i_velocity.x) + (i_velocity.y * i_velocity.y)) > 0)
 				return std::atan2(i_velocity.y, i_velocity.x);
@@ -33,11 +31,14 @@ namespace AIForGames
 			return i_orientation;
 		}
 
-		KinematicSteeringOutput KinematicArrive::GetKinematicSteering()
+		KinematicSteeringOutput Arrive::GetKinematicSteering()
 		{
 			KinematicSteeringOutput output;
 			output.velocity = ofVec2f(0, 0);
 			output.rotation = 0;
+
+			if (m_pInputs->destination->GetPosition().x < -50)
+				return output;
 
 			output.velocity = m_pInputs->destination->GetPosition() - m_pInputs->source->GetPosition();
 
@@ -60,7 +61,7 @@ namespace AIForGames
 			return output;
 		}
 
-		DynamicSteeringOutput KinematicArrive::GetDynamicSteering()
+		DynamicSteeringOutput Arrive::GetDynamicSteering()
 		{
 			DynamicSteeringOutput output;
 			output.angular = 0;

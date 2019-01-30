@@ -181,7 +181,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AIForGames\GameObject\GameObject.cpp" />
-    <ClCompile Include="src\AIForGames\Movement\KinematicArrive.cpp" />
+    <ClCompile Include="src\AIForGames\Movement\Arrive.cpp" />
     <ClCompile Include="src\AIForGames\Movement\Movement.cpp" />
     <ClCompile Include="src\AIForGames\Physics\Kinematic.cpp" />
     <ClCompile Include="src\AIForGames\Renderer\BoidRenderer.cpp" />
@@ -206,7 +206,7 @@
     <ClInclude Include="src\AIForGames\GameObject\GameObject.h" />
     <ClInclude Include="src\AIForGames\GameStructs.h" />
     <ClInclude Include="src\AIForGames\Movement\IMovementAlgorithm.h" />
-    <ClInclude Include="src\AIForGames\Movement\KinematicArrive.h" />
+    <ClInclude Include="src\AIForGames\Movement\Arrive.h" />
     <ClInclude Include="src\AIForGames\Movement\Movement.h" />
     <ClInclude Include="src\AIForGames\Physics\Kinematic.h" />
     <ClInclude Include="src\AIForGames\Renderer\BoidRenderer.h" />

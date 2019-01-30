@@ -4,7 +4,7 @@
 #include "AIForGames/GameObject/GameObject.h"
 #include "ofxGui.h"
 #include "AIForGames/Movement/IMovementAlgorithm.h"
-#include "AIForGames/Movement/KinematicArrive.h"
+#include "AIForGames/Movement/Arrive.h"
 
 class ofApp : public ofBaseApp
 {

@@ -74,41 +74,5 @@ namespace AIForGames
 
 		//	return output;
 		//}
-
-		//KinematicSteeringOutput MovementAlgorithms::KinematicArrive(GameObject* i_player, GameObject* i_target, float i_radiusOfSatisfaction, float i_timeToTarget, float i_maxSpeed)
-		//{
-		//	KinematicSteeringOutput output;
-		//	output.velocity = ofVec2f(0, 0);
-		//	output.rotation = 0;
-		//	
-		//	output.velocity = i_target->GetKinematic()->GetPosition() - i_player->GetKinematic()->GetPosition();
-
-		//	if (output.velocity.length() < i_radiusOfSatisfaction)
-		//	{
-		//		output.velocity = ofVec2f(0, 0);
-		//		output.rotation = 0;
-		//		return output;
-		//	}
-
-		//	output.velocity /= i_timeToTarget;
-
-		//	if (output.velocity.length() > i_maxSpeed)
-		//	{
-		//		output.velocity.normalize();
-		//		output.velocity *= i_maxSpeed;
-		//	}
-
-		//	i_player->GetKinematic()->SetOrientation(CalculateNewOrientation(i_player->GetKinematic()->GetOrientation(), output.velocity));
-
-		//	return output;
-		//}
-
-		//DynamicStreeringOutput MovementAlgorithms::DynamicArrive(GameObject* i_player, GameObject* i_target, float i_radiusOfSatisfaction, float i_timeToTarget)
-		//{
-		//	DynamicStreeringOutput output;
-		//	output.linear = ofVec2f(0, 0);
-		//	output.angular = 0;
-		//	return output;
-		//}
 	}
 }
