@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "AIForGames/GameObject/GameObject.h"
 #include "ofxGui.h"
+#include "AIForGames/Movement/IMovementAlgorithm.h"
+#include "AIForGames/Movement/KinematicArrive.h"
 
 class ofApp : public ofBaseApp
 {
@@ -27,5 +29,6 @@ class ofApp : public ofBaseApp
 
 	private:
 		AIForGames::GameObject* m_pBoidObject;
-		AIForGames::GameObject* m_pTarget;		
+		AIForGames::GameObject* m_pTarget;	
+		AIForGames::Movement::IMovementAlgorithm* m_pMovementAlgo;
 };

@@ -1,6 +1,8 @@
+#pragma once
 #include "Kinematic.h"
 #include "ofTimer.h"
 #include "../../ofApp.h"
+#include "../GameStructs.h"
 
 namespace AIForGames
 {
@@ -121,15 +123,21 @@ namespace AIForGames
 
 	}
 
-	
-
-	void  Physics::Kinematic::Update(KinematicSteeringOutput i_steering)
+	void Physics::Kinematic::Update(KinematicSteeringOutput i_steering)
 	{
 		m_position.x += m_velocity.x * ofGetLastFrameTime() ;
 		m_position.y += m_velocity.y * ofGetLastFrameTime();
 		m_orientation += i_steering.rotation * ofGetLastFrameTime();
 		m_velocity = i_steering.velocity;
 
+	}
+
+	void Physics::Kinematic::Update(DynamicSteeringOutput i_steering)
+	{
+		m_position.x += m_velocity.x * ofGetLastFrameTime();
+		m_position.y += m_velocity.y * ofGetLastFrameTime();
+		m_orientation += i_steering.angular * ofGetLastFrameTime();
+		m_velocity = i_steering.linear;
 	}
 }
 

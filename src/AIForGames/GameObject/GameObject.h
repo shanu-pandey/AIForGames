@@ -26,10 +26,11 @@ namespace AIForGames
 		void SetRadius(float i_radius);
 		void SetKinematic(Physics::Kinematic* i_kinematic);
 		void DrawObject();
-		void Update();
 		void DrawBreadCrumbs();
 		void AddBreadCrumb(ofVec2f i_position);
-		void SetTarget(GameObject* i_target);
+		void Update(KinematicSteeringOutput i_steering);
+		void Update(DynamicSteeringOutput i_steering);
+
 	private:
 		int counter = 0;
 		std::list<ofVec2f> breadCrumbs;
@@ -37,6 +38,6 @@ namespace AIForGames
 		//Renderer::BoidRenderer* m_pBoid;		
 		Renderer::IRenderer* m_pBoid;
 		Physics::Kinematic* m_pKinematic;
-		GameObject* m_pTarget;	
+		
 	};
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "ofVec2f.h"
-#include "ofVectorMath.h"
+#include "../GameStructs.h"
 
 namespace AIForGames
 {
@@ -9,8 +9,11 @@ namespace AIForGames
 		class IMovementAlgorithm
 		{
 		public:
-			virtual void GetSteering() = 0;
-			virtual float CalculateNewOrientation(float i_orientation, ofVec2f i_velocity) = 0;			
+			virtual KinematicSteeringOutput GetKinematicSteering() = 0;
+			virtual DynamicSteeringOutput GetDynamicSteering() = 0;
+			virtual float CalculateNewOrientation(float i_orientation, ofVec2f i_velocity) = 0;	
+		private:
+			MovementInputs * m_pInputs;
 		};
 	}
 }

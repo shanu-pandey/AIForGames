@@ -9,12 +9,14 @@ void ofApp::setup()
 	ofVec2f position = ofVec3f(radius, radius);
 	m_pBoidObject = new AIForGames::GameObject(radius, position, orientation);	
 	m_pTarget = new AIForGames::GameObject(-100, -120);
-	m_pBoidObject->SetTarget(m_pTarget);
+	m_pMovementAlgo = new AIForGames::Movement::KinematicArrive(m_pBoidObject->GetKinematic(), m_pTarget->GetKinematic(), 300, 5, 5);
+	//m_pBoidObject->SetTarget(m_pTarget);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){	
-	m_pBoidObject->Update();
+	
+	m_pBoidObject->Update(m_pMovementAlgo->GetKinematicSteering());
 }
 
 //--------------------------------------------------------------

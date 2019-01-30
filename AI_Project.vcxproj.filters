@@ -61,6 +61,9 @@
     <ClCompile Include="src\AIForGames\Renderer\TargetRenderer.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\AIForGames\Movement\KinematicArrive.cpp">
+      <Filter>src\Movement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -172,6 +175,12 @@
     </ClInclude>
     <ClInclude Include="src\AIForGames\Renderer\IRenderer.h">
       <Filter>src\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIForGames\Movement\KinematicArrive.h">
+      <Filter>src\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIForGames\GameStructs.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

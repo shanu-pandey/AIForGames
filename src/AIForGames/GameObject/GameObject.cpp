@@ -95,20 +95,20 @@ namespace AIForGames
 		DrawBreadCrumbs();*/
 	}
 
-	void GameObject::Update()
+	void GameObject::Update(KinematicSteeringOutput i_steering)
 	{
 		counter++;		
 		//Algorithm 1: Basic Motion; movement round the corners
 		//KinematicSteeringOutput steering = Movement::MovementAlgorithms::BasicMotion(this, 600);
 
 		//Algorithm 2: Seek Steering Behavior, using Kinematics Arrive and Dynamic Arrive
-		KinematicSteeringOutput steering = Movement::MovementAlgorithms::KinematicArrive(this, this->m_pTarget, 10, 1, 800);
-		m_pKinematic->Update(steering);		
+		//KinematicSteeringOutput steering = Movement::MovementAlgorithms::KinematicArrive(this, this->m_pTarget, 10, 1, 800);
+		m_pKinematic->Update(i_steering);
 	}
 
-	void GameObject::SetTarget(GameObject* i_target)
+	void GameObject::Update(DynamicSteeringOutput i_steering)
 	{
-		m_pTarget = i_target;
+		m_pKinematic->Update(i_steering);
 	}
 
 	void GameObject::DrawBreadCrumbs()

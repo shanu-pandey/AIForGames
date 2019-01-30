@@ -1,6 +1,10 @@
 #pragma once
 #include "ofVec2f.h"
-#include "../Movement/Movement.h"
+//#include "../Movement/IMovementAlgorithm.h"
+
+
+struct KinematicSteeringOutput;
+struct DynamicSteeringOutput;
 
 namespace AIForGames
 {
@@ -29,6 +33,7 @@ namespace AIForGames
 			void SetRotation(float i_rotation);
 			
 			void Update(KinematicSteeringOutput i_steering);
+			void Update(DynamicSteeringOutput i_steering);
 
 		private:
 			ofVec2f m_position;
