@@ -27,4 +27,5 @@ class ofApp : public ofBaseApp
 
 	private:
 		AIForGames::GameObject* m_pBoidObject;
+		AIForGames::GameObject* m_pTarget;		
 };

@@ -58,6 +58,9 @@
     <ClCompile Include="src\AIForGames\Movement\Movement.cpp">
       <Filter>src\Movement</Filter>
     </ClCompile>
+    <ClCompile Include="src\AIForGames\Renderer\TargetRenderer.cpp">
+      <Filter>src\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -152,9 +155,6 @@
     <ClInclude Include="src\AIForGames\GameObject\GameObject.h">
       <Filter>src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\AIForGames\Renderer\IRenderer.h">
-      <Filter>src\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="src\AIForGames\Renderer\BoidRenderer.h">
       <Filter>src\Renderer</Filter>
     </ClInclude>
@@ -163,6 +163,15 @@
     </ClInclude>
     <ClInclude Include="src\AIForGames\Movement\Movement.h">
       <Filter>src\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIForGames\Renderer\TargetRenderer.h">
+      <Filter>src\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIForGames\Movement\IMovementAlgorithm.h">
+      <Filter>src\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIForGames\Renderer\IRenderer.h">
+      <Filter>src\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

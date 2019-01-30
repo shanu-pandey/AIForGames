@@ -1,7 +1,6 @@
 #include "ofApp.h"
 
 
-
 //--------------------------------------------------------------
 void ofApp::setup()
 {
@@ -9,6 +8,8 @@ void ofApp::setup()
 	float radius = 20;
 	ofVec2f position = ofVec3f(radius, radius);
 	m_pBoidObject = new AIForGames::GameObject(radius, position, orientation);	
+	m_pTarget = new AIForGames::GameObject(-100, -120);
+	m_pBoidObject->SetTarget(m_pTarget);
 }
 
 //--------------------------------------------------------------
@@ -37,7 +38,10 @@ void ofApp::draw(){
 	////ofRect(0, 0, 20, 20);
 	//ofTriangle(0, -70, -30, 30, 30, 30);
 	//ofPopMatrix();
+
+
 	m_pBoidObject->DrawObject();
+	m_pTarget->DrawObject();
 }
 
 //--------------------------------------------------------------
@@ -62,7 +66,10 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-	
+	if(button == 0)
+		m_pTarget->GetKinematic()->SetPosition(ofVec2f(x, y));
+	else
+		m_pTarget->GetKinematic()->SetPosition(ofVec2f(-300, -300));
 }
 
 //--------------------------------------------------------------
